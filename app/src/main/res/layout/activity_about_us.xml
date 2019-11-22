@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    tools:context="com.anxell.e5ar.SettingActivity">
+
+    <com.anxell.e5ar.custom.MyToolbar
+        android:id="@+id/toolbarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/white"
+        app:titleText="@string/about_us" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/toolbarView"
+        android:background="@color/green" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+
+        android:layout_marginTop="60dp"
+        android:adjustViewBounds="true"
+        android:maxHeight="1000dp"
+        android:maxWidth="1000dp"
+        android:src="@drawable/gem_logo2" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="26dp"
+        android:layout_marginStart="26dp"
+        android:orientation="vertical">
+        <!--app:myTitle="@string/Device_Model"-->
+        <com.anxell.e5ar.custom.My3TextView
+            android:id="@+id/deviceName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:myTitle="Device Models: "
+            app:value="Easiprox⁺\nEasiprox⁺ Slim\nDG-800⁺\nDG-160⁺" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="323dp"
+            android:layout_height="1dp"
+            android:background="@color/gray6" />
+
+        <com.anxell.e5ar.custom.FontButton
+            android:id="@+id/build"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:drawableStart="@drawable/icon_version"
+            android:drawablePadding="10dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="start|center_vertical"
+            android:paddingEnd="17dp"
+            android:paddingStart="17dp"
+            android:text="Build 2.0.0"
+            android:clickable="false"
+            android:textColor="@color/gray3"
+            android:textSize="@dimen/text_size_14" />
+
+        <View
+            android:layout_width="323dp"
+            android:layout_height="1dp"
+            android:background="@color/gray6" />
+
+        <com.anxell.e5ar.custom.FontButton
+            android:id="@+id/web"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:clickable="false"
+            android:drawableStart="@drawable/icon_website"
+            android:drawablePadding="10dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="start|center_vertical"
+            android:paddingEnd="17dp"
+            android:paddingStart="17dp"
+            android:text="www.gianni.com.tw"
+            android:textColor="@color/gray3"
+            android:textSize="@dimen/text_size_14"
+            />
+
+        <View
+            android:layout_width="323dp"
+            android:layout_height="1dp"
+            android:background="@color/gray6" />
+
+        <com.anxell.e5ar.custom.FontButton
+            android:id="@+id/email"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:drawableStart="@drawable/icon_email"
+            android:drawablePadding="10dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="start|center_vertical"
+            android:paddingEnd="17dp"
+            android:paddingStart="17dp"
+            android:clickable="false"
+            android:text="info@anxell.com"
+            android:textColor="@color/gray3"
+            android:textSize="@dimen/text_size_14"
+            android:visibility="gone"
+
+            />
+
+    </LinearLayout>
+</RelativeLayout>
