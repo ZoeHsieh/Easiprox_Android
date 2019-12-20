@@ -45,10 +45,11 @@ import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static com.anxell.e5ar.util.Util.closeSoftKeybord;
 import static com.anxell.e5ar.util.Util.showSoftKeyboard;
 
-public class SettingActivity extends bpActivity implements View.OnClickListener {
-    private String TAG = SettingActivity.class.getSimpleName().toString();
+public class SettingActivity extends bpActivity implements View.OnClickListener,View.OnTouchListener {
+    private String TAG = SettingActivity.class.getSimpleName();
     private Boolean debugFlag = false;
     private My4TextView mDeviceNameTV;
     private My2TextView mDeviceTimeTV;
@@ -70,8 +71,6 @@ public class SettingActivity extends bpActivity implements View.OnClickListener 
     private String deviceModel = "";
     private int userMax = 0;
     private String mDevice_FW_Version = "";
-    private double vr = 0.0;
-    private double vrLimit = 1.02;
     private byte currConfig[]=new byte[BPprotocol.len_Device_Config];
     private byte currTime[] = new byte[BPprotocol.len_Device_Time];
     private byte currSensorLevel = BPprotocol.sensor_level1;
@@ -101,8 +100,9 @@ public class SettingActivity extends bpActivity implements View.OnClickListener 
     private final int setupBackup = 1;
     private final int setupRestore = 2;
     private final int setupLogin = 3;
-    private  int loginProcIndex = 0;
-
+    private int loginProcIndex = 0;
+    private String readCardValue = "";
+    private AlertDialog runningDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -167,7 +167,7 @@ public class SettingActivity extends bpActivity implements View.OnClickListener 
     @Override
     protected void onStop() {
         super.onStop();
-        //unRegisterReceiver(this);
+
     }
 
 
@@ -228,36 +228,26 @@ public class SettingActivity extends bpActivity implements View.OnClickListener 
         mDoorSwitch.setOnClickListener(this);
         findViewById(R.id.aboutUs).setOnClickListener(this);
 
-
-        settingUI.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-
-                }
-                if (event.getAction() == MotionEvent.ACTION_UP) {
-                    setcurrentdate();
-                }
-
-                return false;
-            }
-        });
-
-
     }
 
     @Override
     public void onBackPressed() {
+
+        try{
         super.onBackPressed();
+
         forceDisconnect();
-        unbindService(ServiceConnection);
-        unregisterReceiver(mGattUpdateReceiver);
+       // if (bleService != null) {
+         //   unbindService(ServiceConnection);
+       // }
+        //unregisterReceiver(mGattUpdateReceiver);
         overridePendingTransitionLeftToRight();
         finish();
+        }catch(java.lang.IllegalStateException e){
+            
+        }
 
     }
-
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -501,7 +491,6 @@ public class SettingActivity extends bpActivity implements View.OnClickListener 
         });
         dialogBuilder.show();
     }
-
     private void showAdminPWDDialog(String currentPWD) {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle(R.string.settings_Admin_pwd_Edit);
@@ -740,12 +729,45 @@ public class SettingActivity extends bpActivity implements View.OnClickListener 
         }, 200);
 
         alertDialog.show();
-
-
-
+        runningDialog = alertDialog;
 
 
     }
+
+    private void updateAdminCardDialog(String currentCard) {
+        if(readCardValue.length() != 10)
+            return;
+
+
+        final EditText ArrayCard[] = new EditText[10];
+        final int uiCardEditID []={R.id.editText_Admin_Edit_Dialog_Card1,R.id.editText_Admin_Edit_Dialog_Card2,
+                R.id.editText_Admin_Edit_Dialog_Card3,R.id.editText_Admin_Edit_Dialog_Card4,
+                R.id.editText_Admin_Edit_Dialog_Card5,R.id.editText_Admin_Edit_Dialog_Card6,
+                R.id.editText_Admin_Edit_Dialog_Card7,R.id.editText_Admin_Edit_Dialog_Card8,
+                R.id.editText_Admin_Edit_Dialog_Card9,R.id.editText_Admin_Edit_Dialog_Card10
+        };
+
+
+        for(int i=0;i<uiCardEditID.length;i++) {
+           try{
+                ArrayCard[i] = (EditText) runningDialog.findViewById(uiCardEditID[i]);
+                ArrayCard[i].setText(readCardValue.substring(i,i+1));
+                closeSoftKeybord(ArrayCard[i],this);
+           }catch(java.lang.NullPointerException e){
+
+           }
+        }
+
+
+        readCardValue = "";
+
+    }
+
+
+
+
+
+
     private void showReLockTimeDialog(String currentTime) {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle(R.string.edit_door_re_lock_time);
@@ -1021,9 +1043,7 @@ public class SettingActivity extends bpActivity implements View.OnClickListener 
             break;
             case BPprotocol.cmd_device_bd_addr:
 
-                //APPConfig.deviceType = APPConfig.deviceType_Card;
-
-
+               
 
                 break;
             case BPprotocol.cmd_device_config:
@@ -1070,9 +1090,6 @@ public class SettingActivity extends bpActivity implements View.OnClickListener 
 
             case BPprotocol.cmd_fw_version:
                 update_FW_Version(data);
-
-                vr = Double.parseDouble(mDevice_FW_Version.substring(1));
-
                 break;
 
             case BPprotocol.cmd_device_time:
@@ -1181,9 +1198,17 @@ public class SettingActivity extends bpActivity implements View.OnClickListener 
 
     private void AdminSettingHandle(byte cmd, byte cmdType, byte data[],int datalen){
 
-        if (data[0] == BPprotocol.result_success) {
+        if ((data[0] == BPprotocol.result_success) ||(datalen > 1)){
             switch (cmd) {
+                case BPprotocol.cmd_read_card:
 
+                    if(datalen == 4) {
+
+                         readCardValue = Util.UINT8toStringDecForCard(data, datalen);
+                         updateAdminCardDialog(readCardValue);
+
+                    }
+                    break;
 
                 case BPprotocol.cmd_device_config:
 
@@ -1378,9 +1403,6 @@ public class SettingActivity extends bpActivity implements View.OnClickListener 
         byte lock_type; //0: By Delay, 1: Always Open, 2: Always Closed
         boolean door_sensor_opt;
         boolean tamper_opt;
-        //sendProcessMessage(MSG_PROGRESS_BAR_SETUP_INVISIBLE);
-
-        //mLinearLayout_Setup_Items.setVisibility(View.VISIBLE);
         settingUI.setVisibility(View.VISIBLE);
         loadDeviceDataBar.setVisibility(View.GONE);
         //Get Data
@@ -1528,9 +1550,29 @@ public class SettingActivity extends bpActivity implements View.OnClickListener 
         bpProtocol.setDeviceTime(tmpTime);
 
     }
+    @Override
+    public void disconnectUpdate() {
+        super.disconnectUpdate();
+        if(ConTimer != null){
+            ConTimer.cancel();
+            ConTimer.purge();
+        }
+    }
 
 
+    @Override
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+        if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+            //Toast.makeText(MasterFAQ.this,"UP",Toast.LENGTH_SHORT).show();
 
+        }
+        if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+            //Toast.makeText(MasterFAQ.this,"Down",Toast.LENGTH_SHORT).show();
+            SettingActivity.setcurrentdate();
+        }
+
+        return false;
+    }
 
 
 

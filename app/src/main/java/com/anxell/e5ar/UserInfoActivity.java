@@ -29,8 +29,6 @@ import com.anxell.e5ar.transport.BPprotocol;
 import com.anxell.e5ar.transport.GeneralDialog;
 import com.anxell.e5ar.transport.bpActivity;
 import com.anxell.e5ar.util.Util;
-
-import java.lang.reflect.Array;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.Charset;
@@ -61,7 +59,8 @@ public class UserInfoActivity extends bpActivity implements View.OnClickListener
             private byte tmpCARD[] = new byte[BPprotocol.userCard_maxLen];
             public static byte tmpWriteUserProperty[] = new byte[BPprotocol.len_UserProperty_write];
             public static boolean isUpdateProperty = false;
-
+	    private String readCardValue = "";
+    	    private AlertDialog runningDialog;
             @Override
             protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
@@ -83,14 +82,14 @@ public class UserInfoActivity extends bpActivity implements View.OnClickListener
     @Override
     protected void onRestart() {
         super.onRestart();
-        if(isUpdateProperty){
-            tmpWriteUserProperty[0] = (byte)(userData.getUserIndex() >> 8 );
-            tmpWriteUserProperty[1] = (byte)(userData.getUserIndex() & 0xFF);
+        if (isUpdateProperty) {
+            tmpWriteUserProperty[0] = (byte) (userData.getUserIndex() >> 8);
+            tmpWriteUserProperty[1] = (byte) (userData.getUserIndex() & 0xFF);
 
             bpProtocol.setProperty(tmpWriteUserProperty);
             isUpdateProperty = false;
         }
-            currentClassName = getLocalClassName();
+        currentClassName = getLocalClassName();
 
 
     }
@@ -332,6 +331,12 @@ public class UserInfoActivity extends bpActivity implements View.OnClickListener
                             update_UserProperty(updateData);
 
                         }
+                        break;
+  		    case BPprotocol.cmd_read_card:
+                      if (datalen == 4) {
+                        readCardValue = Util.UINT8toStringDecForCard(data, datalen);
+                        updateUserCardDialog(readCardValue);
+                      }
                         break;
                 }
 
@@ -737,17 +742,46 @@ public class UserInfoActivity extends bpActivity implements View.OnClickListener
             });
         }
 //        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
-        new Handler().postDelayed(new Runnable(){
-            public void run(){
-                //處理少量資訊或UI
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+
 //                alertDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
                 showSoftKeyboard((EditText)item.findViewById(R.id.editText_Users_Edit_Dialog_Card1),UserInfoActivity.this);
             }
         }, 200);
         dialog.show();
-
+        runningDialog = dialog;
 
     }
 
+    private void updateUserCardDialog(String currentCard) {
+        if (readCardValue.length() != 10)
+            return;
+
+
+        final EditText ArrayCard[] = new EditText[10];
+        final int uiCardEditID[] = {R.id.editText_Users_Edit_Dialog_Card1, R.id.editText_Users_Edit_Dialog_Card2,
+                R.id.editText_Users_Edit_Dialog_Card3, R.id.editText_Users_Edit_Dialog_Card4,
+                R.id.editText_Users_Edit_Dialog_Card5, R.id.editText_Users_Edit_Dialog_Card6,
+                R.id.editText_Users_Edit_Dialog_Card7, R.id.editText_Users_Edit_Dialog_Card8,
+                R.id.editText_Users_Edit_Dialog_Card9, R.id.editText_Users_Edit_Dialog_Card10
+        };
+
+
+        for (int i = 0; i < uiCardEditID.length; i++) {
+            try {
+                ArrayCard[i] = (EditText) runningDialog.findViewById(uiCardEditID[i]);
+                ArrayCard[i].setText(readCardValue.substring(i, i + 1));
+                closeSoftKeybord(ArrayCard[i], this);
+            } catch (java.lang.NullPointerException e) {
+
+            }
+        }
+
+
+        readCardValue = "";
+
+    }
 
 }
+

@@ -52,6 +52,7 @@ public class BPprotocol {
     public static final char cmd_sensor_degree = 0x1C;
     public static final char cmd_set_admin_card = 0x1D;
     public static final char cmd_set_user_card = 0x1E;
+    public static final char cmd_read_card          = 0x21;    
     public static final char result_success = 0x00;
     public static final char result_fail = 0x01;
     public static final String bp_address ="00:12:A1";

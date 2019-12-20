@@ -1,5 +1,6 @@
 package com.anxell.e5ar;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,8 +9,10 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 
@@ -47,6 +50,11 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
     public final static int up_none = 0;
     public static boolean isLoadUserListCompleted = false;
     public String deviceBD_ADDR = "";
+    public MyToolbar toolbar;
+    private String deviceName =  "";    
+    private EditText searchView_ET;
+    private Activity curActivity;
+   
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +64,9 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
         Intent intent = getIntent();
         deviceBD_ADDR = intent.getStringExtra(APPConfig.deviceBddrTag);
 
-        registerReceiver(mGattUpdateReceiver,  getIntentFilter());
+ 	    deviceName = intent.getStringExtra(APPConfig.deviceNameTag);
+        curActivity = this;        
+	    registerReceiver(mGattUpdateReceiver,  getIntentFilter());
         findViews();
         setListeners();
         setSearchViewTextSize();
@@ -66,6 +76,15 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(searchView_ET != null)
+                Util.closeSoftKeybord(searchView_ET,curActivity);
+
+                return false;
+            }
+        });
         mAdapter.updateData(mUserDataList);
         bpProtocol.getUsersCount();
        currentClassName = getLocalClassName();
@@ -127,7 +146,7 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
     }
 
     private void setListeners() {
-        MyToolbar toolbar = (MyToolbar) findViewById(R.id.toolbarView);
+        toolbar = (MyToolbar) findViewById(R.id.toolbarView);
         toolbar.setRightBtnClickListener(this);
     }
 
@@ -157,6 +176,28 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
                 return false;
             }
         });
+        searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    if(!isLoadUserListCompleted){
+                        if(progressDialog!=null)
+                            progressDialog.show();
+
+
+                    }
+                }
+            }
+        });
+
+
+        int id = searchView.getContext()
+                .getResources()
+                .getIdentifier("android:id/search_src_text", null, null);
+        searchView_ET = (EditText) searchView.findViewById(id);
+        searchView_ET.setEnabled(false);
+
+
     }
 
     @Override
@@ -326,6 +367,7 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
                     }else if(userMax == 0){
                         userMax =0;
                         mAdapter.notifyDataSetChanged();
+			searchView_ET.setEnabled(true);
                         isLoadUserListCompleted = true;
                         GeneralDialog.MessagePromptDialog(this,"",getString(R.string.no_user_note));
                     }

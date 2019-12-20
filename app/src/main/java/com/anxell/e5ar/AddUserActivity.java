@@ -17,14 +17,14 @@ import com.anxell.e5ar.transport.bpActivity;
 import com.anxell.e5ar.util.Util;
 
 public class AddUserActivity extends bpActivity implements View.OnClickListener {
-    private final String TAG = AddUserActivity.class.getSimpleName().toString();
+    private final String TAG = AddUserActivity.class.getSimpleName();
     private final boolean debugFlag = true;
     private MyEditText mIdET;
     private MyEditText mPasswordET;
     private EditCardView mCardET;
     private  MyToolbar toolbar;
     private boolean isADDOK = false;
-    private int mFrom;
+
     private String device_BDADDR ="";
 
     @Override
@@ -38,11 +38,11 @@ public class AddUserActivity extends bpActivity implements View.OnClickListener 
 
         findViews();
         setListeners();
-
+        registerReceiver(mGattUpdateReceiver,  getIntentFilter());
         Bundle bundle = getIntent().getExtras();
-        mFrom = bundle.getInt("from");
         device_BDADDR = bundle.getString(APPConfig.deviceBddrTag);
         toolbar.setRightEnableColor(false);
+        currentClassName = getLocalClassName();
 
     }
 
@@ -145,6 +145,28 @@ public class AddUserActivity extends bpActivity implements View.OnClickListener 
         }
     }
 
+    @Override
+    public void cmdAnalysis(byte cmd, byte cmdType, byte data[], int datalen) {
+        Util.debugMessage(TAG,"cmdAnalysis",debugFlag);
+        String message = "";
+        Util.debugMessage(TAG,"current="+currentClassName + "local="+getLocalClassName(),debugFlag);
+
+        switch ((char) cmd) {
+
+
+            case BPprotocol.cmd_read_card:
+                if(datalen == 4){
+                   String readCardValue = Util.UINT8toStringDecForCard(data, datalen);
+                    mCardET.setCard(readCardValue);
+
+                }
+                break;
+
+        }
+
+
+    }
+
     private boolean isOkForData() {
         String id = mIdET.getText();
         String password = mPasswordET.getText();
@@ -215,18 +237,5 @@ public class AddUserActivity extends bpActivity implements View.OnClickListener 
         onBackPressed();
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
 
-        switch (mFrom) {
-            case Config.FROM_USER_1_PAGE:
-                overridePendingTransitionTopToBottom();
-                break;
-
-            case Config.FROM_USER_2_PAGE:
-                overridePendingTransitionLeftToRight();
-                break;
-        }
-    }
 }
