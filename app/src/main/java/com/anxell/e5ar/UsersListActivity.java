@@ -50,10 +50,12 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
     public final static int up_none = 0;
     public static boolean isLoadUserListCompleted = false;
     public String deviceBD_ADDR = "";
+    ///
     public MyToolbar toolbar;
     private String deviceName =  "";    
     private EditText searchView_ET;
     private Activity curActivity;
+    ///
    
 
     @Override
@@ -63,9 +65,10 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
         setContentView(R.layout.activity_users_info);
         Intent intent = getIntent();
         deviceBD_ADDR = intent.getStringExtra(APPConfig.deviceBddrTag);
-
+        ///
  	    deviceName = intent.getStringExtra(APPConfig.deviceNameTag);
-        curActivity = this;        
+        curActivity = this;
+        ///
 	    registerReceiver(mGattUpdateReceiver,  getIntentFilter());
         findViews();
         setListeners();
@@ -76,6 +79,7 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(mAdapter);
+        ///
         mRecyclerView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -85,6 +89,7 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
                 return false;
             }
         });
+        ///
         mAdapter.updateData(mUserDataList);
         bpProtocol.getUsersCount();
        currentClassName = getLocalClassName();
@@ -176,6 +181,7 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
                 return false;
             }
         });
+        ///
         searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -191,11 +197,13 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
         });
 
 
+
         int id = searchView.getContext()
                 .getResources()
                 .getIdentifier("android:id/search_src_text", null, null);
         searchView_ET = (EditText) searchView.findViewById(id);
-        searchView_ET.setEnabled(false);
+        searchView_ET.setEnabled(true);////////searchbar??????
+        ///
 
 
     }
@@ -357,6 +365,8 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
                 userMax = encode.getUnsignedTwoByte(data);
                 Util.debugMessage(TAG,"New userMax="+userMax,debugFlag);
 
+                Util.debugMessage(TAG,"isLoadUserListCompleted="+isLoadUserListCompleted,debugFlag);
+
 
                     if(userMax > 0 &&!isLoadUserListCompleted){
                         mUserDataList.clear();
@@ -367,9 +377,13 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
                     }else if(userMax == 0){
                         userMax =0;
                         mAdapter.notifyDataSetChanged();
+                        ///
 			searchView_ET.setEnabled(true);
-                        isLoadUserListCompleted = true;
-                        GeneralDialog.MessagePromptDialog(this,"",getString(R.string.no_user_note));
+			///
+
+                            isLoadUserListCompleted = true;
+                            GeneralDialog.MessagePromptDialog(this, "", getString(R.string.no_user_note));
+
                     }
 
 

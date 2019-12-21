@@ -52,6 +52,7 @@ public class AdvertisingData {
 
 
 
+
         //Device Category list
         dev_Category.put("00","Reader");
         dev_Category.put("01","Keypad");
