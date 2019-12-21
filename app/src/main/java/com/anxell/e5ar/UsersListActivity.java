@@ -202,7 +202,7 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
                 .getResources()
                 .getIdentifier("android:id/search_src_text", null, null);
         searchView_ET = (EditText) searchView.findViewById(id);
-        searchView_ET.setEnabled(true);////////searchbar??????
+        searchView_ET.setEnabled(true);////////searchbar?????????
         ///
 
 
