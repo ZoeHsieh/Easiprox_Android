@@ -48,7 +48,7 @@ public class APPConfig {
     public static final int loginCMDCntMax = 9;
     public static final int backupCMDCntMax = 4; //(not include user data)
     public static final int restoreCMDCntMax = 6;
-    public static final String deviceSeries = "Easiprox⁺,Easiprox⁺ Slim,DG-800⁺,DG-160⁺,DG-360⁺,DG-365⁺";  ///1122 新增型號365
+    public static final String deviceSeries = "Easiprox⁺,Easiprox⁺ Slim,DG-800⁺,DG-160⁺,DG-360⁺,DG-365⁺";  ////1122 新增型號365
     public static final String CustomID = (String)APPConfig.advertisingData.CUSTOM_IDs.get("FFFE");
     public static int Convert_RSSI_to_LEVEL(int rssi)
     {
