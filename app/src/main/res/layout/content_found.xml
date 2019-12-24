@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingEnd="20dp"
-    android:paddingStart="20dp">
+    android:paddingStart="20dp"
+    android:keepScreenOn="true">
 
     <com.anxell.e5ar.custom.FontTextView
         android:id="@+id/searchResult"

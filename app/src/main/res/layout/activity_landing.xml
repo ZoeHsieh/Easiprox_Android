@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context="com.anxell.e5ar.LandingActivity">
+    tools:context="com.anxell.e5ar.LandingActivity"
+    android:keepScreenOn="true">
 
     <android.support.percent.PercentRelativeLayout
         android:layout_width="0dp"

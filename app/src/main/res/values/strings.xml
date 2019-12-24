@@ -224,4 +224,8 @@
     <string name="permission_message_location">Since location access has not been granted, this app will not be able to discover beacons.</string>
     <string name="permission_message_storage">Since storage access has not been granted, this app will not be able to backup settings.</string>
     <string name="need_gps">Android OS 6.0 and up require to enable Location service to find nearby Bluetooth devices. Make sure to enable Location service on your phone.</string>
+    <string name="note_for_card_in_user_add">Click below to enter the card/fob number or scan the card on the keypad/reader</string>
+
+
+
 </resources>

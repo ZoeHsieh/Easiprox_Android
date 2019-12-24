@@ -230,7 +230,7 @@
     <string name="permission_message_location">需授予位置的存取權限，APP才能掃瞄藍牙裝罝</string>
     <string name="permission_message_storage">需授予儲存空間的存取權限，APP才能執行備份設定功能</string>
     <string name="need_gps">安卓6.0以上裝置需開啟位罝服務才能掃瞄藍牙裝罝</string>
-
+    <string name="note_for_card_in_user_add">Click below to enter the card/fob number or scan the card on the keypad/reader</string>
 
 
 </resources>

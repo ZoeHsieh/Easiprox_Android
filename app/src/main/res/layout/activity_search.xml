@@ -8,7 +8,8 @@
     android:background="@android:color/white"
     android:clipChildren="false"
     android:clipToPadding="false"
-    tools:context="com.anxell.e5ar.SearchActivity">
+    tools:context="com.anxell.e5ar.SearchActivity"
+    android:keepScreenOn="true">
 
     <LinearLayout
         android:id="@+id/bottomView"

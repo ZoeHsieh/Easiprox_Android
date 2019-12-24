@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/gray"
     android:id="@+id/SettingRelativeLayout"
-    tools:context="com.anxell.e5ar.SettingActivity">
+    tools:context="com.anxell.e5ar.SettingActivity"
+    android:keepScreenOn="true">
 
     <com.anxell.e5ar.custom.MyToolbar
         android:id="@+id/toolbarView"

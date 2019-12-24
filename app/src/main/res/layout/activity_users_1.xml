@@ -8,7 +8,8 @@
     android:layout_marginTop="20dp"
     android:background="@android:color/white"
     android:fitsSystemWindows="true"
-    tools:context="com.anxell.e5ar.PasswordActivity">
+    tools:context="com.anxell.e5ar.PasswordActivity"
+    android:keepScreenOn="true">
 
     <RelativeLayout
         android:id="@+id/top"

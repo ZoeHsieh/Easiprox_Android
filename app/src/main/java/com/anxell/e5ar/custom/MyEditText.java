@@ -34,8 +34,20 @@ public class MyEditText extends FrameLayout {
     private void showMyAttrs(Context context, AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.MyEditTextAttr);
         String subject = typedArray.getString(R.styleable.MyEditTextAttr_subject);
+        Boolean isshowNote = typedArray.getBoolean(R.styleable.MyEditTextAttr_showNote,false);
         FontTextView subjectTV = (FontTextView) findViewById(R.id.subject);
+        FontTextView noteTV = (FontTextView) findViewById(R.id.note);
         subjectTV.setText(subject);
+
+        if (isshowNote == true)
+        {
+            noteTV.setVisibility(VISIBLE);
+        }
+        else {
+            noteTV.setVisibility(GONE);
+        }
+
+
 
         int inputType = typedArray.getInt(R.styleable.MyEditTextAttr_android_inputType, EditorInfo.TYPE_CLASS_TEXT);
         mValueET.setInputType(inputType);

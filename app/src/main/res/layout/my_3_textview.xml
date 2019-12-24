@@ -9,7 +9,8 @@
     android:paddingStart="15dp"
     android:paddingEnd="15dp"
     android:id="@+id/my_3_layout"
-    android:paddingTop="16dp">
+    android:paddingTop="16dp"
+    android:keepScreenOn="true">
 
     <com.anxell.e5ar.custom.FontTextView
         android:id="@+id/title"

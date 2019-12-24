@@ -47,11 +47,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
-                    android:focusable="false"
                     android:editable="false"
+                    android:focusable="false"
                     android:focusableInTouchMode="false"
                     android:hint="@string/characters_16"
                     android:maxLength="16"
+                    app:showNote="false"
                     app:subject="@string/id" />
             </LinearLayout>
 
@@ -72,6 +73,7 @@
                     android:editable="false"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
+                    app:showNote="false"
                     app:subject="@string/password_pin_code" >
 
                 </com.anxell.e5ar.custom.MyEditText>
@@ -95,7 +97,9 @@
                     android:focusableInTouchMode="false"
                     android:hint="@string/_10_digits"
                     android:maxLength="10"
-                    app:subject="@string/Card" />
+                    app:subject="@string/Card"
+                    app:showNote="true"
+                     />
             </LinearLayout>
 
 

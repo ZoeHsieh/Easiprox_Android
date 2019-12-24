@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:layout_marginTop="25dp"
     android:background="@android:color/white"
-    tools:context="com.anxell.e5ar.HomeActivity">
+    tools:context="com.anxell.e5ar.HomeActivity"
+    android:keepScreenOn="true">
 
     <LinearLayout
         android:layout_width="match_parent"
