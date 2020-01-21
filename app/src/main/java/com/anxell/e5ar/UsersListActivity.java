@@ -378,7 +378,7 @@ public class UsersListActivity extends bpActivity implements View.OnClickListene
                         userMax =0;
                         mAdapter.notifyDataSetChanged();
                         ///
-			searchView_ET.setEnabled(true);
+			            searchView_ET.setEnabled(true);
 			///
 
                             isLoadUserListCompleted = true;

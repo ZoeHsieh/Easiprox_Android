@@ -427,6 +427,7 @@ public class HomeActivity extends bpActivity implements View.OnClickListener {
             String companyID = Integer.toHexString(mandufacturerData.keyAt(0) & 0xFFFF | 0x0000);
             companyID = Util.padRight(companyID,4,'0');
 
+            Util.debugMessage(TAG,"companyID="+companyID,debugFlag);//1225
 
             String customID = Util.bytesToHex(Arrays.copyOfRange(mandufacturerData.valueAt(0), 3, 5));
             Util.debugMessage(TAG, "customID=" + customID, debugFlag);

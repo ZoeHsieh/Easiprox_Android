@@ -59,7 +59,7 @@ public class UserInfoActivity extends bpActivity implements View.OnClickListener
             private byte tmpCARD[] = new byte[BPprotocol.userCard_maxLen];
             public static byte tmpWriteUserProperty[] = new byte[BPprotocol.len_UserProperty_write];
             public static boolean isUpdateProperty = false;
-	    private String readCardValue = "";
+	        private String readCardValue = "";
     	    private AlertDialog runningDialog;
             @Override
             protected void onCreate(Bundle savedInstanceState) {

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Easiprox</string>
+
+    <string name="bluetooth_access_control_system">Bluetooth Access Control System</string>
+    <string name="anxell_technology_coproration">© Copyright 2020 Gianni Industries, Inc.</string>
+
+    <string name="hello">Hello!</string>
+    <string name="welcome">Hoşgeldiniz</string>
+    <string name="searching1">Aranıyor…</string>
+    <string name="next">Sonraki</string>
+    <string name="skip">Atla</string>
+
+    <string name="search_result">Arama sonuçları</string>
+    <string name="please_press_next_to_continue">Devam etmek için lütfen "SONRAKİ" tuşuna basın</string>
+
+    <string name="hello_user">Hello! %1$s.</string>
+    <string name="please_enter_account">Kimliğiniz</string>
+    <string name="please_enter_password">Şifre</string>
+    <string name="you_can_find_the_password_from_the_manual">Varsayılan şifreyi kılavuzdan bulabilirsiniz. Güvenlik kontrolü için lütfen Yönetici şifrenizi değiştirin.</string>
+    <string name="there_is_no_users">Hiç kullanıcı yok. Yeni kullanıcılar eklemek için "EKLE" tuşuna basın.</string>
+
+    <string name="add">Ekle</string>
+
+    <string name="ok">Tamamlandı</string>
+    <string name="cancel">İPTAL</string>
+    <string name="model">%1$s</string>
+    <string name="choose_device">Lütfen seçin</string>
+    <string name="door_closed">KİLİTLİ</string>
+    <string name="door_opened">KİLİTLİ DEĞİL</string>
+    <string name="open">AÇIK</string>
+    <string name="automatic_sensor_to_open">Otomatik</string>
+
+    <string name="setting">Ayarlar</string>
+    <string name="user">Kullanıcılar</string>
+    <string name="history">Etkinlik Geçmişi</string>
+    <string name="backup">Veriyi yedekle</string>
+    <string name="revert">Yedeği geri yükle</string>
+    <string name="device_name">Cihaz Adı</string>
+    <string name="settings_Admin_pwd">Yönetici Şifresi</string>
+    <string name="settings_Admin_pwd_Edit">Yönetici Şifresini Düzenle</string>
+    <string name="settings_Admin_card" >Yönetici Kart / Anahtarlık</string>
+    <string name="settings_Admin_card_Edit">Yönetici Kart / Anahtarlık Düzenle</string>
+    <string name="users_manage_edit_status_duplication_password">Şifre Çoğaltma!!</string>
+    <string name="door_sensor">Manyetik Kontak</string>
+    <string name="door_lock_action">Kilitleme Eylemi</string>
+
+    <string name="use_re_lock_time">Kapı Yeniden Kilitlenme Süresi</string>
+    <string name="always_unlocked">Kapı Daima Kilitli</string>
+    <string name="always_locked">Kapı Daima Kilitli Değil</string>
+
+    <string name="tamper_sensor">Sabotaj Alarmı</string>
+    <string name="tamper_sensor_Level">Sabotaj Sensörü Seviyesi</string>
+    <string name="proximity_read_range">Proximity Okuma Mesafesi</string>
+    <string name="door_re_lock_time">Kapı Yeniden Kilitlenme Süresi</string>
+    <string name="sec">Saniye</string>
+
+    <string name="please_choose">Lütfen seçin</string>
+
+    <string name="can_not_find_device">Cihaz bulunamıyor.</string>
+
+    <string name="please_try_later">Lütfen daha sonra tekrar deneyin</string>
+
+    <string name="searching2">Aranıyor…</string>
+    <string name="please_wait">Lütfen bekleyiniz…</string>
+
+    <string name="device_distance">Cihaz mesafesi</string>
+    <string name="proximity_read_range_setting">Proximity Okuma Mesafesi</string>
+
+    <string name="edit_door_re_lock_time">Kapı Yeniden Kilitlenme Süresini Düzenle (1 ~ 1800 saniye)</string>
+    <string name="please_enter_the_number_of_seconds">Lütfen saniye sayısını girin</string>
+
+    <string name="id">Kimlik</string>
+    <string name="password">Şifre</string>
+    <string name="user_name">Kimlik</string>
+
+    <string name="add_user">Kullanıcı Ekle</string>
+    <string name="Please_Provide_Up_to_16_characters">Kimlik: 16 karaktere kadar</string>
+    <string name="_4_8_digits">Şifre: 4~8 basamaklı</string>
+    <string name="_10_digits">10 basamaklı</string>
+    <string name="user_name_optional">使用者名稱 &#040;非必填&#041;</string>
+
+    <string name="user_info">Kullanıcı Bilgisi</string>
+    <string name="delete">Sil</string>
+    <string name="password_pin_code">Şifre: 4~8 basamaklı</string>
+    <string name="user_name_up_to_12_characters">使用者名稱 &#040;最多12個字元&#041;</string>
+    <string name="access_types_schedule">Erişim Türleri / Zamanlaması</string>
+
+    <string name="types">Erişim Türleri</string>
+    <string name="permanent">Kalıcı</string>
+    <string name="schedule">Geçici</string>
+    <string name="access_times">Kez Sayısı</string>
+    <string name="access_times_2">Lütfen Kez Sayısını girin (0 ~ 255)</string>
+    <string name="recurrent">Zamanlanmış</string>
+    <string name="start">Başlangıç saati</string>
+    <string name="end">Bitiş saati</string>
+    <string name="repeat">Tekrar</string>
+
+    <string name="start_time">Başlangıç saati</string>
+    <string name="end_time">Bitiş saati</string>
+
+    <string name="select_repeat">Tekrar</string>
+
+    <string-array name="week">
+        <item>Her Pazartesi</item>
+        <item>Her Salı</item>
+        <item>Her Çarşamba</item>
+        <item>Her Perşembe</item>
+        <item>Her Cuma</item>
+        <item>Her Cumartesi</item>
+        <item>Her Pazar</item>
+    </string-array>
+
+    <string name="monday">Her Pazartesi</string>
+    <string name="tuesday">Her Salı</string>
+    <string name="wednesday">Her Çarşamba</string>
+    <string name="thursday">Her Perşembe</string>
+    <string name="friday">Her Cuma</string>
+    <string name="saturday">Her Cumartesi</string>
+    <string name="sunday">Her Pazar</string>
+
+    <string name="date">Tarih</string>
+    <string name="device">Kilidi Açan</string>
+
+    <string name="add_more">Daha Ekle</string>
+
+    <string name="done">Tamamlandı</string>
+    <string name="please_setting_proximity_read_range">Proximity Okuma Mesafesi</string>
+    <string name="msg_password_error">Yanlış şifre. Lütfen tekrar deneyin.</string>
+    <string name="msg_please_enter_account">Lütfen kimliğinizi girin.</string>
+    <string name="msg_please_enter_password_1">Lütfen şifrenizi girin.</string>
+    <string name="msg_please_enter_password_2">4~8 basamaklı</string>
+
+    <string name="edit_device_name">Cihaz Adı Düzenle</string>
+    <string name="up_to_16_characters">16 karaktere kadar</string>
+    <string name="msg_please_enter_device_name">Cihaz Adı Düzenle</string>
+    <string name="msg_delete">Kullanıcı Sil?</string>
+
+    <string name="search">Arama</string>
+
+    <string name="restore_all_data_now">Tüm veriler şimdi geri yüklensin mi?</string>
+    <string name="backup_all_data_now">Tüm veriler şimdi yedeklensin mi?</string>
+    <string name="restore_check_dialog_title">Bu cihazı geri yüklemek istediğinizden emin misiniz?</string>
+    <string name="backup_dialog_message">Yedekleniyor…</string>
+    <string name="backup_dialog_title">Yedekleme Cihazı Verileri</string>
+    <string name="restore_dialog_title">Cihaz Verilerini Geri Yükle</string>
+    <string name="restore_dialog_message">Geri yükleniyor…</string>
+    <string name="restore_status">Geri Yükleme Durumu</string>
+    <string name="restore_status_file_not_found">Yedekleme Dosyası Bulunamadı !! Lütfen önce yedekleme yapın!!</string>
+    <string name="restore_success">Tamamlandı</string>
+    <string name="msg_searching">Kurulum için bir Bluetooth cihazına bağlanmalısınız</string>
+    <string name="if_you_forget_your_id_or_password">Kimliğinizi veya şifrenizi unuttuysanız, lütfen yöneticinize başvurun.</string>
+    <string name="hello_1">Hello！</string>
+    <string name="settings_device_vr">Yazılım Sürümü</string>
+    <string name="device_time">Cihaz saati</string>
+    <string name="about_us">Hakkımızda</string>
+    <string name="automatic_setting">Otomatik Ayar</string>
+    <string name="time">Zaman: </string>
+    <string name="backup_status">Yedekleme Durumu</string>
+    <string name="backup_completed">BYedekleme tamamlandı!!</string>
+    <string name="restore_completed">Geri Yükleme Tamamlandı!</string>
+    <string name="download_dialog_title">"İndir"</string>
+    <string name="download_dialog_message">Yükleniyor…</string>
+    <string name="enable_keypad_pin_code_to_access">Tuş Takımı Erişimi</string>
+    <string name="enable_phone_access">Telefon Erişimi</string>
+    <string name="enable_card_access">Kart / Anahtarlık Erişimi</string>
+    <string name="every_week">Her Hafta</string>
+    <string name="Enroll">Oturum aç:</string>
+    <string name="Permanent">Kalıcı</string>
+    <string name="Schedule">Geçici</string>
+    <string name="Recurrent">Recurring</string>
+    <string name="Access_Times">Kez Sayısı</string>
+    <string name="weekly_Sun">[PA]</string>
+    <string name="weekly_Mon">[PT]</string>
+    <string name="weekly_Tue">[SA]</string>
+    <string name="weekly_Wed">[ÇA]</string>
+    <string name="weekly_Thu">[PE]</string>
+    <string name="weekly_Fri">[CU]</string>
+    <string name="weekly_Sat">[CT]</string>
+    <string name="enroll_dialog_title">Oturum aç:</string>
+    <string name="AUTO_ENABLE_CONFLICT">Lütfen önce \'OTOMATİK\' seçeneğini devre dışı bırakın!!!</string>
+    <string name="characters_16">16 karaktere kadar</string>
+    <string name="program_success">Başarılı</string>
+    <string name="program_fail">Başarısız</string>
+    <string name="Device_Model">Cihaz Modelleri:</string>
+    <string name="openType_Card">Kart / Anahtarlık</string>
+    <string name="openType_Button">Buton</string>
+    <string name="openType_Alarm">Alarm</string>
+    <string name="openType_Keypad">Tuş Takımı</string>
+    <string name="settings_history_list">Olay Listesi</string>
+    <string name="settings_users_manage_list">Kullanıcı Listesi</string>
+    <string name="progress_dialog_hide_btn_title">GİZLE</string>
+    <string name="progress_dialog_cancel_btn_title">İPTAL</string>
+    <string name="no_user_note">Hiç kullanıcı yok.</string>
+    <string name="users_manage_edit_status_Admin_name">Geçersiz ID !!</string>
+    <string name="users_manage_edit_status_Admin_pwd">Geçersiz Şifre !!</string>
+    <string name="users_manage_edit_status_Admin_card">Geçersiz Kart/Anahtarlık !!</string>
+    <string name="users_manage_edit_status_duplication_name">Kimlik Çoğaltma !!</string>
+    <string name="users_manage_edit_status_duplication_card">Kart / Anahtarlık Çoğaltma !!</string>
+    <string name="ID">Kimlik</string>
+    <string name="Password">Şifre</string>
+    <string name="Card">Kart / Anahtarlık</string>
+
+    <string name="users_edit_access_control_dialog_type_times_mark">Geçerli kez sayısı:</string>
+    <string name="users_id_edit_dialog_title">Kimliği düzenle: (16 karakter)</string>
+    <string name="users_pwd_edit_dialog_title">Şifreyi Düzenle: (4 ~ 8 basamak)</string>
+    <string name="users_card_edit_dialog_title">Kart / Anahtarlık Düzenle: (10 basamaklı)</string>
+    <string name="Confirm">Onaylama</string>
+    <string name="APP_version">Uygulama sürümü:</string>
+    <string name="over_range_alarm">Aralık dışında !! Lütfen 0-255 arasında bir sayı girin.</string>
+    <string name="Level_1">Seviye 1 (Yüksek Hassasiyet)</string>
+    <string name="Level_2">Seviye 2 (Orta Hassasiyet)</string>
+    <string name="Level_3">Seviye 3 (Düşük Hassasiyet)</string>
+    <string name="UserList_search_placeHolder">Kullanıcıyı aramak için bir kullanıcı kimliği girin.</string>
+    <string name="History_search_placeHolder">Kullanıcıyı aramak için bir kullanıcı kimliği girin.</string>
+    <string name="EnglishCharsAndNumber">1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+
+    <string name="open_fail_permission_denied">Erişim reddedildi. Lütfen Yöneticinize Başvurun.</string>
+    <string name="open_fail_no_eroll">Erişim reddedildi. Lütfen Erişim İçin İlk Oturum Açın.</string>
+    <string name="eroll_fail">Giriş başarısız. Lütfen Giriş Bilgilerinizi Doğrulayın veya Yöneticinize başvurun.</string>
+    <string name="eroll_success">Başarıyla giriş yaptınız. Şimdi bir kapının kilidini açabilirsin.</string>
+
+
+    <string name="permission_title">Functionality limited</string>
+    <string name="permission_message_location">Since location access has not been granted, this app will not be able to discover beacons.</string>
+    <string name="permission_message_storage">Since storage access has not been granted, this app will not be able to backup settings.</string>
+    <string name="need_gps">Android OS 6.0 and up require to enable Location service to find nearby Bluetooth devices. Make sure to enable Location service on your phone.</string>
+    <string name="note_for_card_in_user_add">Kart / Anahtarlık numarasını girmek için aşağıya tıklayın veya tuş takımı / okuyucudaki kartı tarayın.</string>
+
+
+
+</resources>
+

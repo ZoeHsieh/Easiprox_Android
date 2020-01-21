@@ -401,7 +401,7 @@ public class RBLService extends Service {
 				break;
 			tmp = null;
 			try{
-				Thread.sleep(300);
+				Thread.sleep(30);
 			}catch(InterruptedException e)
 			{
 
