@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Easiprox</string>
+
+    <string name="bluetooth_access_control_system">Bluetooth Access Control System</string>
+    <string name="anxell_technology_coproration">© Copyright 2020 Gianni Industries, Inc.</string>
+
+
+
+    <string name="hello">Hello!</string>
+    <string name="welcome">Welcome</string>
+    <string name="searching1">PROCURANDO</string>
+    <string name="next">PRÓXIMO</string>
+    <string name="skip">SAIR</string>
+
+    <string name="search_result">RESULTADO ENCONTRADO</string>
+    <string name="please_press_next_to_continue">POR FAVOR, PRESSIONE "PRÓXIMO" PARA CONTINUAR</string>
+
+    <string name="hello_user">Hello! %1$s.</string>
+    <string name="please_enter_account">SEU USUÁRIO</string>
+    <string name="please_enter_password">SENHA</string>
+    <string name="you_can_find_the_password_from_the_manual">VOCÊ PODE ENCONTRAR A SENHA PADRÃO NO MANUAL. POR FAVOR MUDE SUA SENHA DE ADMINISTRADOR PARA SUA SEGURANÇA.</string>
+    <string name="there_is_no_users">NÃO EXISTE USUÁRIO. DIGITE ADICIONAR PARA INCLUIR NOVO USUÁRIO.</string>
+
+    <string name="add">ADICIONAR</string>
+
+    <string name="ok">FEITO</string>
+    <string name="cancel">CANCELAR</string>
+    <string name="model">%1$s</string>
+    <string name="choose_device">POR FAVOR ESCOLHA</string>
+    <string name="door_closed">PORTA FECHADA</string>
+    <string name="door_opened">PORTA ABERTA</string>
+    <string name="open">ABERTO</string>
+    <string name="automatic_sensor_to_open">AUTO</string>
+
+    <string name="setting">CONFIGURAÇÕES</string>
+    <string name="user">USUÁRIOS</string>
+    <string name="history">AUDITORIA</string>
+    <string name="backup">BACKUP</string>
+    <string name="revert">RESTAURAÇÃO DO BACKUP</string>
+    <string name="device_name">NOME DO DISPOSITIVO</string>
+    <string name="settings_Admin_pwd">SENHA ADMINISTRADOR</string>
+    <string name="settings_Admin_pwd_Edit">EDITAR SENHA ADMINISTRADOR</string>
+    <string name="settings_Admin_card" >CARTÃO ADMINISTRADOR</string>
+    <string name="settings_Admin_card_Edit">EDITAR CARTÃO ADMINISTRADOR</string>
+    <string name="users_manage_edit_status_duplication_password">SENHA DUPLICADO</string>
+    <string name="door_sensor">SENSOR DE PORTA</string>
+    <string name="door_lock_action">AÇÃO DA FECHADURA</string>
+
+    <string name="use_re_lock_time">TEMPO DE TRAVAMENTO</string>
+    <string name="always_unlocked">PORTA SEMPRE ABERTA</string>
+    <string name="always_locked">PORTA SEMPRE FECHADA</string>
+
+    <string name="tamper_sensor">ALARME DE TAMPER</string>
+    <string name="tamper_sensor_Level">SENSOR DE TAMPER</string>
+    <string name="proximity_read_range">ALCANCE DE LEITURA</string>
+    <string name="door_re_lock_time">TEMPO DE TRAVAMENTO DA PORTA</string>
+    <string name="sec">%1$s Sec.</string>
+
+    <string name="please_choose">POR FAVOR ESCOLHA</string>
+
+    <string name="can_not_find_device">NÃO FOI POSSÍVEL ENCONTRAR O DISPOSITIVO</string>
+
+    <string name="please_try_later">POR FAVOR TENTE MAIS TARDE</string>
+
+    <string name="searching2">PROCURANDO....</string>
+    <string name="please_wait">POR FVOR, ESPERE UM MOMENTO...</string>
+
+    <string name="device_distance">DISTÂNCIA DO LEITOR</string>
+    <string name="proximity_read_range_setting">ALCANCE DE LEITURA</string>
+
+    <string name="edit_door_re_lock_time">CONFIGURE O TEMPO DE TRAVAMENTO (1~1800 SEGUNDOS)</string>
+    <string name="please_enter_the_number_of_seconds">POR FAVOR COLOQUE NÚMERO DE SEGUNDOS</string>
+
+    <string name="id">USUÁRIO</string>
+    <string name="password">SENHA</string>
+    <string name="user_name">USUÁRIO</string>
+
+    <string name="add_user">ADICIONAR USUÁRIOS</string>
+    <string name="Please_Provide_Up_to_16_characters">USUÁRIO: ATÉ 16 CARACTÉRES</string>
+    <string name="_4_8_digits">SENHA: 4~8 DÍGITOS</string>
+    <string name="_10_digits">10 dígitos</string>
+    <string name="user_name_optional">使用者名稱 &#040;非必填&#041;</string>
+
+    <string name="user_info">INFORMAÇÕES DO USUÁRIO</string>
+    <string name="delete">APAGAR</string>
+    <string name="password_pin_code">SENHA: 4~8 DÍGITOS</string>
+    <string name="user_name_up_to_12_characters">使用者名稱 &#040;最多12個字元&#041;</string>
+    <string name="access_types_schedule">TIPOS DE ACESSO / AGENDAMENTO</string>
+
+    <string name="types">TIPOS DE ACESSO</string>
+    <string name="permanent">PERMANENTE</string>
+    <string name="schedule">TEMPORÁRIO</string>
+    <string name="access_times">NÚMERO DE VEZES</string>
+    <string name="access_times_2">POR FAVOR ENTRE COM NÚMERO DE VEZES (0~255)</string>
+    <string name="recurrent">AGENDAMENTO</string>
+    <string name="start">HORÁRIO DE INÍCIO</string>
+    <string name="end">HORÁRIO FINAL</string>
+    <string name="repeat">REPETIR</string>
+
+    <string name="start_time">HORÁRIO DE INÍCIO</string>
+    <string name="end_time">HORÁRIO FINAL</string>
+
+    <string name="select_repeat">REPETIR</string>
+
+    <string-array name="week">
+        <item>TODA SEGUNDA-FEIRA</item>
+        <item>TODA TERÇA-FEIRA</item>
+        <item>TODA QUARTA-FEIRA</item>
+        <item>TODA QUINTA-FEIRA</item>
+        <item>TODA SEXTA-FEIRA</item>
+        <item>TODO SÁBADO</item>
+        <item>TODO DOMINGO</item>
+    </string-array>
+
+    <string name="monday">TODA SEGUNDA-FEIRA</string>
+    <string name="tuesday">TODA TERÇA-FEIRA</string>
+    <string name="wednesday">TODA QUARTA-FEIRA</string>
+    <string name="thursday">TODA QUINTA-FEIRA</string>
+    <string name="friday">TODA SEXTA-FEIRA</string>
+    <string name="saturday">TODO SÁBADO</string>
+    <string name="sunday">TODO DOMINGO</string>
+
+    <string name="date">DATA</string>
+    <string name="device">DESTRAVADO POR</string>
+
+    <string name="add_more">ADICIONAR MAIS</string>
+
+    <string name="done">FEITO</string>
+    <string name="please_setting_proximity_read_range">ALCANCE DE LEITURA</string>
+    <string name="msg_password_error">SENHA INCORRETA. TENTE NOVAMENTE</string>
+    <string name="msg_please_enter_account">POR FAVOR ENTRE COM SEU USUÁRIO</string>
+    <string name="msg_please_enter_password_1">POR FAVOR ENTRE COM SUA SENHA</string>
+    <string name="msg_please_enter_password_2">4~8 DÍGITOS</string>
+
+    <string name="edit_device_name">EDITE O NOME DO DISPOSITIVO</string>
+    <string name="up_to_16_characters">ATÉ 16 CARACTERES</string>
+    <string name="msg_please_enter_device_name">EDITE O NOME DO DISPOSITIVO</string>
+    <string name="msg_delete">APAGAR USUÁRIO?</string>
+
+    <string name="search">PROCURAR</string>
+
+    <string name="restore_all_data_now">RESTAURAR TODA INFORMAÇÃO AGORA?</string>
+    <string name="backup_all_data_now">INICIAR BACKUP AGORA?</string>
+    <string name="restore_check_dialog_title">Você tem certeza que quer restaurar o dispositivo?</string>
+    <string name="backup_dialog_message">BACKUP</string>
+    <string name="backup_dialog_title">BACKUP DA INFORMAÇÃO</string>
+    <string name="restore_dialog_title">RESTAURAÇÃO DA INFORMAÇÃO</string>
+    <string name="restore_dialog_message">RESTAURANDO</string>
+    <string name="restore_status">STATUS DA RESTAURAÇÃO</string>
+    <string name="restore_status_file_not_found">Arquivo de backup não encontrado. Por favor faça o backup antes.</string>
+    <string name="restore_success">FEITO</string>
+    <string name="msg_searching">Você precisa conectar ao Bluetooth para configurar</string>
+    <string name="if_you_forget_your_id_or_password">Se você esqueceu seu usuário ou senha, por favor contate o administrador.</string>
+    <string name="hello_1">Hello！</string>
+    <string name="settings_device_vr">VERSÃO DO FIRMWARE</string>
+    <string name="device_time">HORÁRIO DO DISPOSITIVO</string>
+    <string name="about_us">SOBRE NÓS</string>
+    <string name="automatic_setting">CONFIGURAÇÃO AUTOMÁTICA</string>
+    <string name="time">HORÁRIO</string>
+    <string name="backup_status">STATUS DO BACKUP</string>
+    <string name="backup_completed">BACKUP FINALIZADO</string>
+    <string name="restore_completed">Restore Completed!</string>
+    <string name="download_dialog_title">DOWNLOAD</string>
+    <string name="download_dialog_message">CARREGANDO...</string>
+    <string name="enable_keypad_pin_code_to_access">TECLADO DE ACESSO</string>
+    <string name="enable_phone_access">TELEFONE DE ACESSO</string>
+    <string name="enable_card_access">CARTÃO DE ACESSO</string>
+    <string name="every_week">TODA SEMANA</string>
+    <string name="Enroll">LOGIN</string>
+    <string name="Permanent">PERMANENTE</string>
+    <string name="Schedule">TEMPORÁRIO</string>
+    <string name="Recurrent">Recurring</string>
+    <string name="Access_Times">NÚMERO DE VEZES</string>
+    <string name="weekly_Sun">[DOM]</string>
+    <string name="weekly_Mon">[SEG]</string>
+    <string name="weekly_Tue">[TER]</string>
+    <string name="weekly_Wed">[QUA]</string>
+    <string name="weekly_Thu">[QUI]</string>
+    <string name="weekly_Fri">[SEX]</string>
+    <string name="weekly_Sat">[SAB]</string>
+    <string name="enroll_dialog_title">LOGIN</string>
+    <string name="AUTO_ENABLE_CONFLICT">POR FAVOR, DESABILITE \'AUTO\' PRIMEIRO!</string>
+    <string name="characters_16">USUÁRIO: ATÉ 16 CARACTÉRES</string>
+    <string name="program_success">SUCESSO</string>
+    <string name="program_fail">FALHA</string>
+    <string name="Device_Model">MODELOS DE DISPOSITIVOS</string>
+    <string name="openType_Card">CARTÃO</string>
+    <string name="openType_Button">BOTÃO</string>
+    <string name="openType_Alarm">ALARME</string>
+    <string name="openType_Keypad">TECLADO</string>
+    <string name="settings_history_list">LISTA DE EVENTOS</string>
+    <string name="settings_users_manage_list">LISTA DE USUÁRIOS</string>
+    <string name="progress_dialog_hide_btn_title">OCULTAR</string>
+    <string name="progress_dialog_cancel_btn_title">CANCELAR</string>
+    <string name="no_user_note">NÃO EXISTE USUÁRIO.</string>
+    <string name="users_manage_edit_status_Admin_name">USUÁRIO INVÁLIDO</string>
+    <string name="users_manage_edit_status_Admin_pwd">SENHA INVÁLIDA</string>
+    <string name="users_manage_edit_status_Admin_card">CARTÃO INVÁLIDO</string>
+    <string name="users_manage_edit_status_duplication_name">USUÁRIO DUPLICADO</string>
+    <string name="users_manage_edit_status_duplication_card">CARTÃO DUPLICADO</string>
+    <string name="ID">USUÁRIO</string>
+    <string name="Password">SENHA</string>
+    <string name="Card">CARTÃO</string>
+
+    <string name="users_edit_access_control_dialog_type_times_mark">NÚMERO TOTAL DE HORÁRIOS:</string>
+    <string name="users_id_edit_dialog_title">Editar Usuário (16 caractéres)</string>
+    <string name="users_pwd_edit_dialog_title">Editar Senha (4~8 dígitos)</string>
+    <string name="users_card_edit_dialog_title">Editar cartão (10 dígitos)</string>
+    <string name="Confirm">CONFIRMAR</string>
+    <string name="APP_version">VERSÃO DO APP</string>
+    <string name="over_range_alarm">Fora de alcance!! Por favor entre com número entre 0-255.</string>
+    <string name="Level_1">NIVEL 1 (ALTA SENSIBILIDADE)</string>
+    <string name="Level_2">NIVEL 2 (MÉDIA SENSIBILIDADE)</string>
+    <string name="Level_3">NÍVEL 3 (BAIXA SENSIBILIDADE)</string>
+    <string name="UserList_search_placeHolder">ENTRE COM USUÁRIO PARA ENCONTRÁ-LO</string>
+    <string name="History_search_placeHolder">ENTRE COM USUÁRIO PARA ENCONTRÁ-LO</string>
+    <string name="EnglishCharsAndNumber">1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+
+    <string name="open_fail_permission_denied">Acesso Negado. Por favor contate seu administrador</string>
+    <string name="open_fail_no_eroll">Acesso Negado. Por favor registrar-se primeiro para ter acesso.</string>
+    <string name="eroll_fail">Falha ao Registrar. Favor verificar seus dados ou contatar seu administrador</string>
+    <string name="eroll_success">Você se registrou com sucesso. Agora destrave sua porta.</string>
+
+
+    <string name="permission_title">Functionality limited</string>
+    <string name="permission_message_location">Since location access has not been granted, this app will not be able to discover beacons.</string>
+    <string name="permission_message_storage">Since storage access has not been granted, this app will not be able to backup settings.</string>
+    <string name="need_gps">Android OS 6.0 and up require to enable Location service to find nearby Bluetooth devices. Make sure to enable Location service on your phone.</string>
+    <string name="note_for_card_in_user_add">Clique abaixo para entrar com número do cartão ou faça leitura do cartão no leitor.</string>
+
+
+
+
+
+
+
+</resources>
