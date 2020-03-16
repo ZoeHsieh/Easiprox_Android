@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/background"
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:foreground="?attr/selectableItemBackground"
@@ -13,28 +16,36 @@
 
     <com.anxell.e5ar.custom.FontTextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="10dp"
         android:textColor="@color/gray3"
         android:textSize="@dimen/text_size_17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/value"
+        android:maxLines="1"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="6sp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeStepGranularity="1sp"
+        android:layout_marginEnd="20dp"
         tools:text="@string/device_name" />
 
     <com.anxell.e5ar.custom.FontTextView
         android:id="@+id/value"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="20dp"
         android:layout_toEndOf="@+id/title"
         android:ellipsize="end"
         android:gravity="end"
         android:singleLine="true"
         android:textColor="@android:color/darker_gray"
         android:textSize="@dimen/text_size_17"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="EA3K001" />
 
 
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

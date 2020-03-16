@@ -15,21 +15,26 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@android:color/white"
-        app:titleText="@string/door_re_lock_time" />
+        app:titleText="@string/door_re_lock_time"
+        />
 
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/green" />
+        android:background="@color/green"
+        />
 
     <com.anxell.e5ar.custom.MyEditText
         android:id="@+id/sec"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:maxLines="1"
         android:hint="@string/please_enter_the_number_of_seconds"
         android:inputType="number"
         android:maxLength="4"
-        app:subject="@string/edit_door_re_lock_time" />
+        app:subject="@string/edit_door_re_lock_time"
+
+        />
 </LinearLayout>

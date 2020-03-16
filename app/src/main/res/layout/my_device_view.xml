@@ -17,14 +17,18 @@
 
     <com.anxell.e5ar.custom.FontTextView
         android:id="@+id/foundDeviceName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_toEndOf="@+id/dot"
         android:drawablePadding="5dp"
         android:drawableEnd="@drawable/arrow"
         android:ellipsize="end"
         android:gravity="center"
-        android:singleLine="true"
         android:textColor="@color/gray4"
-        android:textSize="@dimen/text_size_24" />
+
+        android:maxLines="1"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeStepGranularity="1sp"/>
 </RelativeLayout>

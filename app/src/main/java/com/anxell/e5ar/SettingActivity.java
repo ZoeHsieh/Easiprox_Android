@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.anxell.e5ar.custom.FontEditText;
 import com.anxell.e5ar.custom.FontTextView;
@@ -770,7 +771,7 @@ public class SettingActivity extends bpActivity implements View.OnClickListener,
 
     private void showReLockTimeDialog(String currentTime) {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        dialogBuilder.setTitle(R.string.edit_door_re_lock_time);
+       // dialogBuilder.setTitle(R.string.edit_door_re_lock_time);
         //dialogBuilder.setMessage(getString(R.string._4_8_digits));
 
         LayoutInflater inflater = this.getLayoutInflater();
@@ -778,6 +779,9 @@ public class SettingActivity extends bpActivity implements View.OnClickListener,
         dialogBuilder.setView(dialogView);
 
         final FontEditText editText = (FontEditText) dialogView.findViewById(R.id.editText);
+        TextView title_tv = (TextView) dialogView.findViewById(R.id.textView);
+        title_tv.setVisibility(View.VISIBLE);
+
 
         editText.setText(currentTime);
         editText.setTextColor(Color.BLACK);
@@ -859,6 +863,8 @@ public class SettingActivity extends bpActivity implements View.OnClickListener,
                 }
             }
         });
+
+
 
         alertDialog.show();
     }

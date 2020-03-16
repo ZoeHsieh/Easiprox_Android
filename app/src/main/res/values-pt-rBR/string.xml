@@ -33,6 +33,7 @@
     <string name="open">ABERTO</string>
     <string name="automatic_sensor_to_open">AUTO</string>
 
+<!--    <string name="setting">CONFIGURAÇÕES</string>-->
     <string name="setting">CONFIGURAÇÕES</string>
     <string name="user">USUÁRIOS</string>
     <string name="history">AUDITORIA</string>
@@ -69,7 +70,7 @@
     <string name="device_distance">DISTÂNCIA DO LEITOR</string>
     <string name="proximity_read_range_setting">ALCANCE DE LEITURA</string>
 
-    <string name="edit_door_re_lock_time">CONFIGURE O TEMPO DE TRAVAMENTO (1~1800 SEGUNDOS)</string>
+    <string name="edit_door_re_lock_time">CONFIGURE O TEMPO DE TRAVAMENTO(1~1800 SEGUNDOS)</string>
     <string name="please_enter_the_number_of_seconds">POR FAVOR COLOQUE NÚMERO DE SEGUNDOS</string>
 
     <string name="id">USUÁRIO</string>

@@ -6,17 +6,30 @@
     android:orientation="vertical"
     android:keepScreenOn="true">
 
-    <TextView
+    <com.anxell.e5ar.custom.FontTextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="    " />
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:maxLines="4"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="20dp"
+        android:autoSizeMaxTextSize="100dp"
+        android:autoSizeStepGranularity="1dp"
+        android:visibility="gone"
+        android:text="@string/edit_door_re_lock_time" />
 
     <com.anxell.e5ar.custom.FontEditText
         android:id="@+id/editText"
         android:background="@drawable/edittext_border"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:textColor="@color/gray5"
