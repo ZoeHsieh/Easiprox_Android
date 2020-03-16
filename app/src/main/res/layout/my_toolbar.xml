@@ -29,10 +29,11 @@
         android:textColor="@color/gray3"
         android:textSize="@dimen/text_size_17"
         android:maxLines="1"
-        android:autoSizeTextType="uniform"
-        android:autoSizeMinTextSize="2sp"
-        android:autoSizeMaxTextSize="100sp"
-        android:autoSizeStepGranularity="1sp"
+
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="2sp"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeStepGranularity="1sp"
         tools:text="@string/setting" />
 
     <com.anxell.e5ar.custom.FontTextView

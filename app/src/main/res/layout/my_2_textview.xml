@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/white"
     android:foreground="?attr/selectableItemBackground"
     android:paddingTop="16dp"
@@ -24,6 +25,11 @@
             android:layout_marginEnd="10dp"
             android:textColor="@color/gray3"
             android:textSize="@dimen/text_size_17"
+            android:maxLines="1"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="6sp"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeStepGranularity="1sp"
             tools:text="@string/device_name" />
 
         <com.anxell.e5ar.custom.FontTextView

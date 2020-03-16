@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -55,7 +56,7 @@
             android:layout_toEndOf="@+id/relogin"
             android:layout_marginStart="0dp"
             android:layout_marginEnd="0dp"
-
+            app:autoSizeStepGranularity="1sp"
             app:showDot="true" />
 
         <com.anxell.e5ar.custom.FontTextView
@@ -70,16 +71,11 @@
             android:text=""
             android:textColor="@android:color/black"
             android:textSize="12sp"
-            app:layout_widthPercent="60%"
             android:layout_toLeftOf="@+id/setup"
             android:layout_toRightOf="@+id/relogin"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
-            android:maxLines="1"
-            android:autoSizeTextType="uniform"
-            android:autoSizeMinTextSize="2sp"
-            android:autoSizeMaxTextSize="100sp"
-            android:autoSizeStepGranularity="1sp"/>
+            />
 
         <com.anxell.e5ar.custom.FontButton
             android:id="@+id/setup"
@@ -99,10 +95,11 @@
             android:textColor="@android:color/black"
 
             android:maxLines="1"
-            android:autoSizeTextType="uniform"
-            android:autoSizeMinTextSize="2sp"
-            android:autoSizeMaxTextSize="100sp"
-            android:autoSizeStepGranularity="1sp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="2sp"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeStepGranularity="1sp"
+
             android:textSize="12sp" />
 
 
@@ -124,10 +121,10 @@
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_size_12"
             android:maxLines="1"
-            android:autoSizeTextType="uniform"
-            android:autoSizeMinTextSize="2sp"
-            android:autoSizeMaxTextSize="12sp"
-            android:autoSizeStepGranularity="1sp"/>
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="2sp"
+            app:autoSizeMaxTextSize="12sp"
+            app:autoSizeStepGranularity="1sp"/>
 
 
 
@@ -152,10 +149,10 @@
             android:textColor="@android:color/darker_gray"
             android:textSize="@dimen/text_size_24"
             android:maxLines="1"
-            android:autoSizeTextType="uniform"
-            android:autoSizeMinTextSize="2sp"
-            android:autoSizeMaxTextSize="100sp"
-            android:autoSizeStepGranularity="1sp"/>
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="2sp"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeStepGranularity="1sp"/>
 
         <com.anxell.e5ar.custom.FontTextView
             android:layout_width="wrap_content"
@@ -170,10 +167,10 @@
             android:textColor="@android:color/darker_gray"
             android:textSize="@dimen/text_size_12"
             android:maxLines="1"
-            android:autoSizeTextType="uniform"
-            android:autoSizeMinTextSize="2sp"
-            android:autoSizeMaxTextSize="100sp"
-            android:autoSizeStepGranularity="1sp"/>
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="2sp"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeStepGranularity="1sp"/>
 
     </RelativeLayout>
 

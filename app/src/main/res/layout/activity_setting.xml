@@ -131,10 +131,10 @@
                     android:textAllCaps="false"
                     android:textColor="@color/gray3"
                     android:maxLines="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizeMinTextSize="2sp"
-                    android:autoSizeMaxTextSize="100sp"
-                    android:autoSizeStepGranularity="1sp"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="2sp"
+                    app:autoSizeMaxTextSize="100sp"
+                    app:autoSizeStepGranularity="1sp"
                     android:textSize="@dimen/text_size_16" />
             </LinearLayout>
 
