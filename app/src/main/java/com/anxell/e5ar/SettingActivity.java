@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.customtabs.CustomTabsIntent;
 import android.support.v7.app.AlertDialog;
 import android.text.Editable;
 import android.text.InputType;
@@ -1580,7 +1582,17 @@ public class SettingActivity extends bpActivity implements View.OnClickListener,
         return false;
     }
 
-
+    public static void openWebLink(Context mContest,String url)
+    {
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder()
+                .setShowTitle(true);
+//                        .setCloseButtonIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_arrow_back_ios))
+//                        .setStartAnimations(AboutUsActivity.this, R.anim.slide_from_right, R.anim.slide_to_left)
+//                        .setExitAnimations(AboutUsActivity.this, R.anim.slide_from_left, R.anim.slide_to_right);
+        CustomTabsIntent customTabsIntent = builder.build();
+        isACTIVE_SEND = true;
+        customTabsIntent.launchUrl(mContest, Uri.parse(url));
+    }
 
 
 

@@ -10,4 +10,6 @@ public class Config {
 
     public static final int FROM_USER_1_PAGE = -1;
     public static final int FROM_USER_2_PAGE = 1;
+    public static final long BUTTON_DEBOUNCE = 1000;
+
 }

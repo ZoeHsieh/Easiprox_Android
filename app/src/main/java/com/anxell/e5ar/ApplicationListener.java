@@ -12,6 +12,8 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
 
+import static com.anxell.e5ar.transport.bpActivity.isACTIVE_SEND;
+
 
 public class ApplicationListener implements Application.ActivityLifecycleCallbacks {
     private static Map<String,Activity> destoryMap = new HashMap<>();
@@ -26,15 +28,16 @@ public class ApplicationListener implements Application.ActivityLifecycleCallbac
     @Override
     public void onActivityStopped(Activity activity) {
         foregroundCount--;
-        if (foregroundCount <= 0) {
-            // TODO 这里处理从前台进入到后台的逻辑
+        if (isACTIVE_SEND == false) {
+            if (foregroundCount <= 0) {
+                // TODO 这里处理从前台进入到后台的逻辑
 
-            for (int i=0;i<=destoryMap.size()-1;i++)
-            {
-                destoryActivity(activity.getLocalClassName());
+                for (int i = 0; i <= destoryMap.size() - 1; i++) {
+                    destoryActivity(activity.getLocalClassName());
+                }
+                int id = android.os.Process.myPid();
+                android.os.Process.killProcess(id);
             }
-            int id= android.os.Process.myPid();
-            android.os.Process.killProcess(id);
         }
     }
     /*
